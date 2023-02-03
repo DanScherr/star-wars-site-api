@@ -159,3 +159,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ### 1.3. Implement Rout Change when Click of Button on welcome.component.html
 
 ## 2. **Create Dashboard Screen**:
+- ### 2.1. Implement Dashboards on dashboard.component.html.
+- ### 2.2. Create src/environment folder with environment.ts file
+    - implement it
+- ### 2.3. Create Service Dashboard:
+    - 2.2.1. ```$ ng g service dashboard/dashboard/components/dashboard```
+    - 2.2.2. Create index.ts and export service file
+    - 2.2.3.
+    - 2.3. Implementing Dashboard Service:
