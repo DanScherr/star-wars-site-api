@@ -129,6 +129,33 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ### 4.3. Configure welcome-routing.module
 - ### 4.4. Update Welcome.module    
     - Import and Declare welcome-routing.module
+    - don't forget to import RouterModule as well
 - ### 4.5. Update app.module
     - Import WelcomeRoutingModule
 
+## 5. Configure Route for Child Module on dashboard/dashboard/:
+- ### 5.1. Implements dashboard-routing.components
+- ### 5.2. Update /dashboard/components/index.ts to export dashboard-routing.component
+- ### 5.3. Configure dashboard-routing.module
+- ### 5.4. Update dashboard.module
+    - Import and Declare dashboard-routing.module
+    - don't forget to import RouterModule as well
+- ### 5.5. Update app.module
+    - Import DashboardRoutingModule
+
+***
+
+# **Screen Development**:
+## 1. **Create Welcome Screen**:
+- ### 1.1. Import libraries to welcome.module
+    - import libraries that are going to be used to implement screen
+        - ReactiveFormsModule
+        - HttpClientModule
+        - FlexLayoutModule
+            - install it: ```npm i -s @angular/flex-layout @angular/cdk```
+        - MatButtonModule
+
+- ### 1.2. Implement welcome.component.html and .css
+- ### 1.3. Implement Rout Change when Click of Button on welcome.component.html
+
+## 2. **Create Dashboard Screen**:

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { WelcomeRoutingComponent, WelcomeComponent } from './components';
+import { DashboardRoutingComponent, DashboardComponent } from '../dashboard';
 
 export const WelcomeRouts: Routes = [
     {

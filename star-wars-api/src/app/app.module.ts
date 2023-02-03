@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /** DEPENDENCIES */
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeModule, DashboardModule, WelcomeRoutingModule } from './dashboard';
+import { WelcomeModule, DashboardModule, WelcomeRoutingModule, DashboardRoutingComponent, DashboardRoutingModule } from './dashboard';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import { WelcomeModule, DashboardModule, WelcomeRoutingModule } from './dashboar
     WelcomeModule,
     DashboardModule,
     WelcomeRoutingModule,
+    DashboardRoutingModule,
 
     AppRoutingModule
   ],
