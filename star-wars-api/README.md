@@ -1,34 +1,24 @@
-# StarWarsApi
+# **STAR WARS:** :space_invader::star:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+<br>
 
-## Development server
+### This is the ***root directory*** of **Star Wars Screen API Page**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<br>
 
-## Code scaffolding
+# **Summary**: :round_pushpin:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [**Initial Config**](#initial-config)
 
-## Build
+- [**Dashboard Dependencies**](#dashboard-dependencies)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [**Route Dependecies**](#route-dependencies)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [**Screen Develpment**](#screen-development)
 
 ***
-
 # **Initial Config**:
+[**Back to the top!**](#star-wars-space_invaderstar) :point_left::top:
 
 ## Creating a new workspace and initial application:
 1. ```$ ng new star-wars-api```
@@ -53,6 +43,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ***
 
 # **Dashboard dependencies**:
+[**Back to the top!**](#star-wars-space_invaderstar) :point_left::top:
 
 ## Create **dashboard/welcome** dependencies:
 - ###  1. **Module**:
@@ -97,10 +88,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ***
 
 # **Route dependencies**:
+[**Back to the top!**](#star-wars-space_invaderstar) :point_left::top:
 
 - **Create Route files** to each created module (*welcome and dashboard*):
 
-## 1. Dashboard/Welcome/ dependencies:
+## 1. **Dashboard/Welcome/ dependencies**:
 - ### 1. **Create Route files** on /Welcome/:
     - #### 1.1. Create Module:
         - 1.1.1. ```$ ng g class dashboard/welcome/welcome-routing.module```
@@ -108,7 +100,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - #### 2.1. Create Component:
         - 2.1.1. ```$ ng g class dashboard/welcome/components/welcome-routing.component```
 
-## 2. Dashboard/Dashboard/ dependencies:
+## 2. **Dashboard/Dashboard/ dependencies**:
 - ### 1. **Create Route files** on Dashboard/Dashboard/:
     - #### 1.1. Create Module:
         - 1.1.1. ```$ ng g class dashboard/dashboard/dashboard-routing.module```
@@ -116,14 +108,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     - #### 2.1. Create Component:
         - 2.1.1. ```$ ng g class dashboard/dashboard/components/dashboard-routing.component```
 
-## 3. Configure our app-routing.module for root
+## 3. **Configure our app-routing.module for root**:
 - ### 3.1. import it on app.module
     - must be the last one in the imported modules.
 - ### 3.2. Add directive in app.component.html
     - Angular adds submodules inside application through the directive.
     - So that all child submodules will be inserted the same directive.
 
-## 4. Configure Route for Child Module on dashboard/welcome/:
+## 4. **Configure Route for Child Module on dashboard/welcome/**:
 - ### 4.1. Implements welcome-routing.components
 - ### 4.2. Update /welcome/components/index.ts to export welcome-routing.component
 - ### 4.3. Configure welcome-routing.module
@@ -133,7 +125,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ### 4.5. Update app.module
     - Import WelcomeRoutingModule
 
-## 5. Configure Route for Child Module on dashboard/dashboard/:
+## 5. **Configure Route for Child Module on dashboard/dashboard/**:
 - ### 5.1. Implements dashboard-routing.components
 - ### 5.2. Update /dashboard/components/index.ts to export dashboard-routing.component
 - ### 5.3. Configure dashboard-routing.module
@@ -146,6 +138,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ***
 
 # **Screen Development**:
+[**Back to the top!**](#star-wars-space_invaderstar) :point_left::top:
+
 ## 1. **Create Welcome Screen**:
 - ### 1.1. Import libraries to welcome.module
     - import libraries that are going to be used to implement screen

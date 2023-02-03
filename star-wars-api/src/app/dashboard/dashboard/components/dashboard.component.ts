@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { DashboardService } from '../service';
-
-declare var google:any;
 
 interface starWars {
   value: string;
@@ -17,45 +13,119 @@ interface starWars {
 })
 export class DashboardComponent implements OnInit {
 
-  form: FormGroup;
-
-  private data: any;
-
- /**
+  /** Variables, constants, etc declaration */
+  selectedStar: string;
+  id: string;
   list_of_starWars: starWars[] = [
-    { value: 'people-0',viewValue: 'People' },
-    { value: 'films-1',viewValue: 'Films' },
-    { value: 'starships-2',viewValue: 'Starships' },
-    { value: 'vehicles-3',viewValue: 'Vehicles' },
-    { value: 'species-4',viewValue: 'Species' },
-    { value: 'planets-5',viewValue: 'Planets' }
+    { value: 'people', viewValue: 'People' },
+    { value: 'films', viewValue: 'Films' },
+    { value: 'starships', viewValue: 'Starships' },
+    { value: 'vehicles', viewValue: 'Vehicles' },
+    { value: 'species', viewValue: 'Species' },
+    { value: 'planets', viewValue: 'Planets' }
   ]
-  */
+  counted_stars: string;
+  countedName_searched: string;
+  first_name: string;
+  first_film: string;
+  
 
+
+  /** Contructor */
   constructor(
-    private fb: FormBuilder,
-    private dataService: DashboardService,
+    private dataService: DashboardService
     ) {}
 
-    ngOnInit() {
-      this.counting_starWars();
-      this.gerarForm();
+  ngOnInit(): void {
+    
+  }
+
+  /** Display all data in screen
+   * 
+   * @returns void
+   */
+  button_Action(): void {
+    this.counting_starWars();
+    this.search_name();
+    this.getFirst_name();
+    this.getFirst_film();
+  }
+
+  /**
+   * Counting selected stars
+   * from form-field
+   * 
+   * @return void
+   */
+  counting_starWars(): void {
+    var query = '/' + this.selectedStar +'/?count'
+    this.dataService.get_api(query)
+    .subscribe(
+      data => {
+        this.counted_stars = JSON.stringify(data["count"])
+      }
+    )
+  }
+
+  /**
+   *  Count names from API
+   * 
+   * @return void
+   */
+  search_name(): void {
+    var query = '/' + this.selectedStar +'/?search=' + this.id 
+    console.log(query)
+    this.dataService.get_api(query)
+    .subscribe(
+      data => {
+        this.countedName_searched = JSON.stringify(data['count']);
+      }
+    )
+  }
+
+  /**
+   *  Get name from API
+   * 
+   * @return void
+   */
+  getFirst_name(): void {
+    var query = '/' + this.selectedStar +'/?search=' + this.id 
+    console.log(query)
+    this.dataService.get_api(query)
+    .subscribe(
+      data => {
+        this.first_name = JSON.stringify(data['results'][1]["name"]);
+      }
+    )
+  }
+
+  /**
+   *  Get film from API
+   * 
+   * @return void
+   */
+  getFirst_film(): void {
+    var query = '/' + this.selectedStar +'/?search=' + this.id 
+    this.dataService.get_api(query)
+    .subscribe(
+      data => {
+        this.get_film(JSON.stringify(data['results'][1]["films"]).slice(23, 32));
+      }
+    )
     }
 
-    gerarForm() {
-      this.form = this.fb.group({
-        email: ['', [Validators.required, Validators.email]], // primeiro campo de texto
-        senha: ['', [Validators.required, Validators.minLength(6)]] // segundo campo de texto
-      });
+  /**
+   *  Get ttle of filme from API
+   * 
+   * @return void
+   */
+  get_film(film_query: string): void {
+    console.log(film_query)
+    this.dataService.get_api(film_query)
+    .subscribe(
+      data => {
+        this.first_film =  JSON.stringify(data['title']);
+      }
+    )
     }
-
-    counting_starWars() {
-      this.dataService.get_api('/' +  +'/?count')
-      .subscribe(
-        data => {
-          console.log(JSON.stringify(data["count"]))
-        }
-      )
-    }
-
 }

@@ -3,7 +3,7 @@
     height: 100vh;
     background-image:url('../../../../assets/space-star-wars-api.png');
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -17,4 +17,36 @@ section {
 
 a {
     text-decoration: none;
+}
+
+.fade {
+    display: block;
+    animation-name: fadeout;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    color: #fbff00;
+    font-size: 5em;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+@keyframes fadeout {
+    from {
+      width: 100vw;
+    }
+    to {
+      width: 0vh;
+    }
+  }
+
+.perspective {
+    width: 50vw;
+    color: #fed34f !important;
+    transform: perspective(300px) rotateX(25deg);
+    text-align: justify;
 }

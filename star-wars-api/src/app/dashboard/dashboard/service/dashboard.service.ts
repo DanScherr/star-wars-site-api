@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { environment as env } from '../../../../environment/environment';
+import { ArrayType } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class DashboardService {
 
   constructor(private http: HttpClient) {}
 
+  
   get_api(path: string): Observable<any> {
     return this.http.get(env.baseUrl + path)
   }
