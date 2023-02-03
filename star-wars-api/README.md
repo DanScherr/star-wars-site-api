@@ -163,7 +163,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ### 2.2. Create src/environment folder with environment.ts file
     - implement it
 - ### 2.3. Create Service Dashboard:
-    - 2.2.1. ```$ ng g service dashboard/dashboard/components/dashboard```
-    - 2.2.2. Create index.ts and export service file
-    - 2.2.3.
-    - 2.3. Implementing Dashboard Service:
+    - 2.3.1. ```$ ng g service dashboard/dashboard/components/dashboard```
+    - 2.3.2. Create index.ts and export service file
+    - 2.3.3. Implementing Dashboard Service:
+    - 2.3.4. import and provide service on dashboard.module
+    
