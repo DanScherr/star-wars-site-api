@@ -1,0 +1,56 @@
+<div id="im-your-father">
+  <!-- start of sidebar -->
+  <mat-drawer-container>
+    <mat-drawer-content>
+      <!-- start of content -->
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Counting Star Wars</mat-label>
+          <mat-select matNativeControl [(ngModel)]="selectedStar" name="star">
+            <mat-option *ngFor="let row of list_of_starWars" 
+              [value]="row.value">
+              {{row.viewValue}}
+            </mat-option>
+            <mat-option value="films">Films</mat-option>
+            <mat-option value="starship">Starshop</mat-option>
+            <mat-option value="vehicles">Vehicles</mat-option>
+            <mat-option value="species">Species</mat-option>
+            <mat-option value="planets">Planets</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Name:</mat-label>
+          <input matInput placeholder="Id" name="id" [(ngModel)]="id">
+        </mat-form-field>
+      
+        <section>
+          <div class="button-row" >
+            <button mat-button color="accent" (click)="button_Action()">
+              SELECT STAR !!
+            </button>
+          </div>
+        </section>
+      </form>
+      <!-- end of content -->
+    </mat-drawer-content>
+  </mat-drawer-container>
+  <!-- end of sidebar -->
+
+  <!-- start of grid list-->
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile id="chart_1"> STAR: {{counted_stars}} </mat-grid-tile>
+    <mat-grid-tile id="chart_2">COUNT BY ID: {{countedName_searched}}</mat-grid-tile>
+    <mat-grid-tile id="chart_3">FIRST NAME: {{first_name}}</mat-grid-tile>
+    <mat-grid-tile id="chart_4">FIRST FILM: {{first_film}}</mat-grid-tile>
+  </mat-grid-list>
+  <!-- end of grid list -->
+
+  <footer>@DanielScheicher</footer>
+</div>
+
+
+
+
+
+
